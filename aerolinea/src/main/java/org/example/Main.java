@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.controller.AvionController;
 import org.example.persistencia.Conexion;
 
 import javax.swing.*;
@@ -8,6 +9,9 @@ import javax.swing.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Conexion.openConnection();
-        }
+
+        AvionController avionController = new AvionController();
+        avionController.create();
+        //avionController.delete();
     }
+}

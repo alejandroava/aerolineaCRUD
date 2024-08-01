@@ -5,14 +5,14 @@ public class Avion {
     private String modelo;
     private int capacidad;
 
-    //constructor
-    public Avion (int id, String modelo,int capacidad){
-        this.id=id;
-        this.modelo=modelo;
-        this.capacidad=capacidad;
+    public Avion(int id, String modelo, int capacidad) {
+        this.id = id;
+        this.modelo = modelo;
+        this.capacidad = capacidad;
     }
 
-    public Avion(){}
+    public Avion() {
+    }
 
     public int getId() {
         return id;
@@ -26,7 +26,7 @@ public class Avion {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
+    public void setModelo() {
         this.modelo = modelo;
     }
 

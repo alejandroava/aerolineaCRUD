@@ -37,4 +37,19 @@ public class PasajeroModel implements IPasajeroModel {
         Conexion.closeConnection();
         return pasajero;
     }
+
+    @Override
+    public void delete(Pasajero pasajero) {
+
+    }
+
+    @Override
+    public String readById(int id) {
+        return "";
+    }
+
+    @Override
+    public Pasajero update(Pasajero request, int id) {
+        return null;
+    }
 }
