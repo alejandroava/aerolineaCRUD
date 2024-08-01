@@ -1,7 +1,8 @@
 package org.example.entities;
 
 import java.sql.Time;
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Vuelo {
     private int id;
@@ -21,23 +22,30 @@ public class Vuelo {
         this.idAvion = idAvion;
     }
 
+    public Vuelo(String destino, Date fechaSalida, Date horaSalidad, int idAvion) {
+
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public String getDestino() {
+
         return destino;
     }
 
     public void setDestino(String destino) {
+
         this.destino = destino;
     }
 
-    public Date getFechaSalida() {
+    public java.sql.Date getFechaSalida() {
         return fechaSalida;
     }
 
