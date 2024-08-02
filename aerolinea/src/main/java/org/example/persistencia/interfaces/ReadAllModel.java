@@ -1,5 +1,7 @@
 package org.example.persistencia.interfaces;
 
-public interface ReadAllModel <ArrayList> {
-    public ArrayList readAll (ArrayList reservas);
+import java.util.List;
+
+public interface ReadAllModel <Entity> {
+    public List<Entity> readAll (int id);
 }

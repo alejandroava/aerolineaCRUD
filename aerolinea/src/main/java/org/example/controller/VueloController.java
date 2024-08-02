@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.sql.Date;
+import java.util.List;
 
 public class VueloController {
     VueloModel vueloModel;
@@ -40,5 +41,9 @@ public class VueloController {
         int id= Integer.parseInt(JOptionPane.showInputDialog("Ingrese el id del vuelo"));
         //Avion avion = new Avion(id);
         vueloModel.delete(id);
+    }
+    public List<Vuelo> readByDestino(String destino){
+        return this.vueloModel.readByDestino(destino);
+
     }
 }

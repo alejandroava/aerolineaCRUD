@@ -1,14 +1,13 @@
 package org.example.model;
 
-import org.example.entities.Avion;
 import org.example.entities.Vuelo;
 import org.example.persistencia.Conexion;
 import org.example.persistencia.imodel.IVueloModel;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javax.swing.text.html.parser.Entity;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VueloModel implements IVueloModel {
     @Override
@@ -52,13 +51,39 @@ public class VueloModel implements IVueloModel {
         Conexion.closeConnection();
     }
 
-    @Override
-    public String readById(int id) {
-        return "";
-    }
 
     @Override
     public Date update(Date request, int id) {
         return null;
+    }
+
+    @Override
+    public List<Vuelo> readByDestino(String destino) {
+        Connection connection = Conexion.openConnection();
+        Vuelo vuelo = null;
+        List<Vuelo> vuelos = new ArrayList<>();
+        try {
+            String sqlQuery = "SELECT * FROM Vuelo WHERE destino = ?;";
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+
+            preparedStatement.setString(1,destino);
+            ResultSet result = preparedStatement.executeQuery();
+
+            while (result.next()){
+                vuelo = new Vuelo(result.getInt("id"),
+                        result.getString("destino"),
+                        result.getDate("fecha_salida"),
+                        result.getTime("hora_salida"),
+                        result.getInt("id_avion"));
+                vuelos.add(vuelo);
+            }
+
+            preparedStatement.close();
+
+        }catch (SQLException error){
+            throw new RuntimeException();
+        }
+        return vuelos;
+
     }
 }

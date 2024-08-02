@@ -1,14 +1,11 @@
 package org.example.persistencia.imodel;
 
 import org.example.entities.Pasajero;
-import org.example.persistencia.interfaces.CreateModel;
-import org.example.persistencia.interfaces.DeleteModel;
-import org.example.persistencia.interfaces.ReadModel;
-import org.example.persistencia.interfaces.UpdateModel;
+import org.example.persistencia.interfaces.*;
 
 public interface IPasajeroModel extends
         CreateModel <Pasajero>,
-        ReadModel <String>,
+        ReadModelByNombre <Pasajero>,
         UpdateModel <Pasajero>,
-        DeleteModel <Pasajero> {
+        DeleteModel <String> {
 }

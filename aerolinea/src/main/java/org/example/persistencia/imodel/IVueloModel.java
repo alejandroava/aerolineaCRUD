@@ -10,7 +10,7 @@ import java.sql.Date;
 
 public interface IVueloModel extends
         CreateModel <Vuelo>,
-        ReadModel<String>,
+        ReadModel<Vuelo>,
         UpdateModel<Date>,
         DeleteModel<Integer> {
 }
